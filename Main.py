@@ -2,6 +2,7 @@ from Bluetooth import *
 from Gamepad import *
 from Keyboard import *
 from evdev import *
+bt = Bluetooth("/home/pi/BluezGP/sdp_record_gamepad.xml","000508", "BT\ Gamepad")
 device = False
 i = 0
 
@@ -16,7 +17,6 @@ while True:
         # Check for USB Controller's identifier
         if "Dreamcast" in str(dev):
             device = False
-            bt = Bluetooth("/home/pi/BluezGP/sdp_record_gamepad.xml","000508", "BT\ Gamepad")
             bt.listen()
             gp = Gamepad(dev)
             gp.event_loop(bt)
@@ -31,7 +31,6 @@ while True:
     
 #If all we found was the Circuit gem
 if device != False:
-    bt = Bluetooth("/home/pi/BluezGP/sdp_record_kbd.xml","000540","BT\ Keyboard")
     bt.listen()
-    kb = Keyboard(device)
+    kb = Gamepad(device)
     kb.event_loop(bt)

@@ -7,6 +7,20 @@ class Gamepad:
         self.DEBUG = debug
         # EvCodes comming in from controller
         self.gamepadmap = {}
+        #Circuit Gem codes
+        self.gamepadmap[105] = (6,0) # KEY_LEFT
+        self.gamepadmap[103] = (6,1) # KEY_UP
+        self.gamepadmap[106] = (6,2) # KEY_RIGHT
+        self.gamepadmap[108] = (6,3) # KEY_DOWN
+        self.gamepadmap[31] = (6,4) # KEY_Y
+        self.gamepadmap[30] = (6,5) # KEY_X
+        self.gamepadmap[44] = (6,6) # KEY_B
+        self.gamepadmap[45] = (6,7) # KEY_A
+        self.gamepadmap[28] = (7,7) # KEY_START
+        self.gamepadmap[01] = (7,6) # KEY_SELECT
+        self.gamepadmap[02] = (7,5) # KEY_L
+        self.gamepadmap[04] = (7,4) # KEY_R
+        # Dreamcast controller codes
         self.gamepadmap[310] = (6,0) # KEY_LEFT
         self.gamepadmap[308] = (6,1) # KEY_UP
         self.gamepadmap[311] = (6,2) # KEY_RIGHT
